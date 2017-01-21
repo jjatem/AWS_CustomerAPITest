@@ -1,4 +1,17 @@
 ---
+ - hosts:  control
+   tasks:
+   - name: Grab .NET CustomerAPITest Build from Amazon AWS S3 Bucket
+     s3:
+      aws_access_key: "AKIAJZKNBNKMUAJIM2AQ"
+      aws_secret_key: "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"
+      bucket: net-deployment-jj
+      object: CustomerAPITest.zip
+      dest: /home/joffre/Documents/ansible/playbooks_win/roles/aws-customerapi/files/CustomerAPITest.zip
+      mode: get
+      permission: public-read
+      overwrite: true
+
  - hosts: aws
    roles:
     - { role: aws-customerapi, remote_install_package: "C:\\Deployment\\CustomerAPITest.zip", remote_install_path : "C:\\WebApps\\CustomerAPITest", setup_drive_destination : "C:\\WebApps\\CustomerAPITest", main_app_pool : "CustomerAPITest"}

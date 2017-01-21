@@ -32,7 +32,7 @@
      port: 80
      ssl: 'yes'
      application_pool: "{{ main_app_pool }}"
-     physical_path: 'C:\Program Files\Windows Server\Bin\webapps\site'
+     physical_path: 'C:\inetpub\wwwroot'
      register: "Default Web Site"
 
  - name: Add Default Web Site Website http-https bindings
