@@ -1,0 +1,6 @@
+---
+ - hosts: aws
+   roles:
+    - { role: aws-customerapi, remote_install_package: "C:\\Deployment\\CustomerAPITest.zip", remote_install_path : "C:\\WebApps\\CustomerAPITest", setup_drive_destination : "C:\\WebApps\\CustomerAPITest", main_app_pool : "CustomerAPITest"}
+    #- mbs-monitor
+     
