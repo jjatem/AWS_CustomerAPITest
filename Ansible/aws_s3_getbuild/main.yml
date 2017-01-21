@@ -1,0 +1,13 @@
+---
+# tasks file for aws-s3-getbuild
+ - name: Grab .NET CustomerAPITest Build from Amazon AWS S3 Bucket
+   s3:
+     aws_access_key: "{{ aws_access_key }}"
+     aws_secret_key: "{{ aws_secret_key }}"
+     bucket: net-deployment-jj
+     object: CustomerAPITest.zip
+     dest: /home/joffre/Documents/ansible/playbooks_win/roles/aws-customerapi/files/CustomerAPITest.zip
+     mode: get
+     permission: public-read
+     overwrite: true
+
